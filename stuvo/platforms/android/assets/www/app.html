@@ -9,11 +9,17 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/agenda.css" />
         <script type="text/javascript" src="js/jquery.js"></script>
-        <title>Stuvo App - Agenda</title>
+        <script type="text/javascript" src="js/zepto.min.js"></script>
+        <title>Stuvo App</title>
         
         <script>
 			$( document ).ready(function() {
+				loadAgenda();
+			});
+			function loadAgenda(){
+				document.getElementById('agenda').innerHTML = "<img class=\"loading\">";
 				$.getJSON( "http://srv5.mvdw-software.com/workspace/Stuvo/backend/html/agenda.php", function( data ) {
+					document.getElementById('agenda').innerHTML = "";
 					$.each( data['events'], function( eventId, event ) {
 						var agendaItem = "";
 						agendaItem += "<div class=\"agenda-item\">";
@@ -27,7 +33,7 @@
 						document.getElementById('agenda').innerHTML += agendaItem;
 					});
 				});
-			});
+			}
         </script>
     </head>
     <body>
@@ -37,9 +43,11 @@
 				<a id="mobile" href="#mobilemenu"></a>
 			</div>
 		</div>
+		
 		<div id="content">
 			<h1>Agenda</h1>
 			<div id="agenda">
+				<img class="loading">
 			</div>
 		</div>
         <script type="text/javascript" src="cordova.js"></script>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/agenda.css" />
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/hammer.min.js"></script>
+        <script type="text/javascript" src="js/hook.min.js"></script>
+        <title>Stuvo App</title>
+        
+        <script>
+			$( document ).ready(function() {
+				loadAgenda();
+			
+				var contentElement = document.getElementById('content');
+				Hammer(contentElement).on("swipedown", function() {
+					// REFRESH
+				    loadAgenda();
+				});
+				var menuElement = document.getElementById('header-container');
+				var menu = document.getElementById('mobilemenu');
+				Hammer(menuElement).on("swipeleft", function() {
+				    // OPEN MENU
+				    menuOpen();
+				});
+				Hammer(menuElement).on("swiperight", function() {
+				    // OPEN MENU
+				    menuClose();
+				});
+				Hammer(menu).on("swiperight", function() {
+				    // OPEN MENU
+				    menuClose();
+				});
+				
+				// Callback
+				$('#hook').hook({
+				  reloadPage: false,
+				  reloadEl: function(){
+				    loadAgenda();
+				  }
+				});
+			});
+			function loadAgenda(){
+				document.getElementById('agenda').innerHTML = "<div class=\"loading\"></div>";
+				$.getJSON( "http://srv5.mvdw-software.com/workspace/Stuvo/backend/html/agenda.php", function( data ) {
+					document.getElementById('agenda').innerHTML = "";
+					var agenda = "";
+					$.each( data['events'], function( month, eventData ) {
+						agenda += "<h2>" + month + "</h2>";
+						$.each(eventData, function( eventId, event ) {
+							var agendaItem = "";
+							agendaItem += "<div class=\"agenda-item\">";
+							
+							agendaItem += "<span class=\"agenda-date\">";
+							agendaItem += event['date'];
+							agendaItem += "</span>";
+							agendaItem += event['name'];
+							
+							agendaItem += "</div>";
+							agenda += agendaItem;
+						});
+					});
+					document.getElementById('agenda').innerHTML = agenda;
+				});
+			}
+			
+			function menuToggle(){
+				var menu = document.getElementById('mobilemenu');
+				if (menu.className == ""){
+					menuClose();
+				}else{
+					menuOpen();
+				}
+			}
+			function menuOpen(){
+				var menu = document.getElementById('mobilemenu');
+				menu.className = "";
+			}
+			function menuClose(){
+				var menu = document.getElementById('mobilemenu');
+				menu.className = "closed";
+			}
+        </script>
+    </head>
+    <body>
+    	<div class="hook" id="hook"></div>
+	    <div id="header-container">
+			<div id="header">
+				<a id="logo" href="/"></a>
+				<a id="mobile" href="#mobilemenu" onclick="menuToggle();"></a>
+			</div>
+		</div>
+		<div id="mobilemenu" class="closed">
+					
+		</div>
+		
+		<div id="content">
+			<h1>Agenda</h1>
+			<div id="agenda">
+				<div class="loading"></div>
+			</div>
+		</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

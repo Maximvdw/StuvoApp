@@ -18,6 +18,14 @@
     text-transform:uppercase;
     width:100%;
 }
+
+.loading{
+	background: url("../img/loading.gif");
+	margin-left: auto;
+	margin-right: auto;
+	height: 48px;
+	width: 48px;
+}
  
  /* Header */
  #header{
@@ -44,7 +52,7 @@
  /* Header logo */
  #logo{
 	/* Logo path */
-	background: url("../images/logo.jpg");
+	background: url("../img/logo.png");
 	background-size: auto 100%;
     background-repeat: no-repeat;
 
