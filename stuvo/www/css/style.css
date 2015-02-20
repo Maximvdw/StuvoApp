@@ -15,8 +15,12 @@
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .loading{
@@ -25,6 +29,10 @@
 	margin-right: auto;
 	height: 48px;
 	width: 48px;
+}
+
+:focus {
+    outline: 0;
 }
  
  /* Header */
@@ -77,7 +85,7 @@
 #mobilemenu{
 	width: 200px;
 	height: 100%;
-	position: absolute;
+	position: fixed;
 	right: 0px;
 	background-color: rgb(44,44,44);
 	border-left: 4px solid #30353b;

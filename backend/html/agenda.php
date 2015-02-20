@@ -24,20 +24,34 @@ $events = $cal->events->listEvents($config['googleapi']['calendarid'], $params);
 $output = array();
 
 $currentMonth = date('n');
+$currentYear = date('Y');
 
 $i = 0;
 $monthStr = "Deze Maand";
 foreach ($events->getItems() as $event) {
+	// Laad event data
 	$eventName = $event->summary;
-	$eventDateStr = date('d/m',strtotime($event->start->dateTime));
-	$eventMonth = date('n',strtotime($event->start->dateTime));
+	$eventTime = strtotime($event->start->dateTime);
+	$eventDateStr = date('d/m',$eventTime);
+	$eventMonth = date('n',$eventTime);
+	$eventYear = date('Y',$eventTime);
+	$eventId = $event->id;
+	$eventDescription = $event->description == null ? "" : $event->description;
+	
 	if ($eventMonth == $currentMonth){
 		$monthStr = "Deze Maand";
 	}else{
-		$monthStr = date('F',strtotime($event->start->dateTime));
+		if ($eventYear == $currentYear)
+			$monthStr = date('F',$eventTime);
+		else
+			$monthStr = date('F Y',$eventTime);
 	}
+	
+	// Zet event data in array voor JSON output
 	$output['events'][$monthStr][$i]['name'] = $eventName;
 	$output['events'][$monthStr][$i]['date'] = $eventDateStr;	
+	$output['events'][$monthStr][$i]['description'] = $eventDescription;	
+	$output['events'][$monthStr][$i]['id'] = $eventId;	
 	$i++;
 }
 

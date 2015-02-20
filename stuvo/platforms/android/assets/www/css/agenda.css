@@ -3,10 +3,10 @@
 	background-color:#e30713;
 	color: white;
 	width: 100%;
-	height: 25px;
-	font-size: 18px;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	height: auto;
+	font-size: 22px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 	padding-top: 0px;
 	padding-left: 3px;
 }
@@ -18,4 +18,39 @@
 
 .agenda{
 	width: 100%;
+}
+
+.agenda-name{
+	width: 100%;
+}
+.agenda-info-container{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;	
+}
+.agenda-info{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	border-radius: 6px;
+}
+
+
+.agenda-info-landscape{
+	font-size: 14px;
+	font-style: italic;
+}
+
+.agenda-info-contain.closed{
+	display: none;
+}
+
+@media screen and (max-width: 400px) {
+	.agenda-info-landscape{
+		display: none;
+	}
 }
