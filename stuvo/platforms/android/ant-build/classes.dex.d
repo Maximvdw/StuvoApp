@@ -28,4 +28,11 @@
 /var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/be/ehb/stuvo/R$attr.class \
 /var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/be/ehb/stuvo/BuildConfig.class \
 /var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/be/ehb/stuvo/R.class \
+/var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/io/cordova/hellocordova/R$drawable.class \
+/var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/io/cordova/hellocordova/R$xml.class \
+/var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/io/cordova/hellocordova/CordovaApp.class \
+/var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/io/cordova/hellocordova/R$string.class \
+/var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/io/cordova/hellocordova/R$attr.class \
+/var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/io/cordova/hellocordova/BuildConfig.class \
+/var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/classes/io/cordova/hellocordova/R.class \
 /var/www/codiad/workspace/Stuvo/stuvo/platforms/android/ant-build/dexedLibs/classes-3b5065b30f1893c9d60e87677dca5b9f.jar \
