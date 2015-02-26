@@ -29,5 +29,5 @@ function google_api_php_client_autoload($className) {
     require_once($filePath);
   }
 }
-
+require 'src/Facebook/facebook.php';
 spl_autoload_register('google_api_php_client_autoload');
