@@ -26,6 +26,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <gap:plugin name="nl.x-services.plugins.socialsharing" source="plugins.cordova.io" />
-    <gap:plugin name="nl.x-services.plugins.calendar" />
+    <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
+    <gap:plugin name="nl.x-services.plugins.calendar" version="4.2.4" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+    <gap:plugin name="com.millerjames01.sqlite-plugin" version="1.0.1" />
 </widget>
