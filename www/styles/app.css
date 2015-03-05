@@ -1,0 +1,25 @@
+.left {
+	text-align: left;
+}
+
+#nieuws-loading{
+	margin-top: 20px;
+	background: url('../img/loading.gif') no-repeat center;
+	height: 50px;
+	width: 100%;
+}
+
+#nieuws-loading.hidden{
+	display: none;	
+}
+
+#agenda-loading{
+	margin-top: 20px;
+	background: url('../img/loading.gif') no-repeat center;
+	height: 50px;
+	width: 100%;
+}
+
+#agenda-loading.hidden{
+	display: none;	
+}

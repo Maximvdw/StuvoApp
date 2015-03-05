@@ -1,0 +1,19 @@
+<ons-page ng-controller="NewsDetailController">
+
+	<ons-toolbar>
+	 	<div class="left"><ons-back-button>Terug</ons-back-button></div>
+		<div class="center">Stuvo Nieuws</div>
+		<div class="right">
+			<span class="toolbar-button--quiet navigation-bar__line-height">
+				<i class="ion-android-share" style="font-size:20px;" onclick="window.plugins.socialsharing.share('Stuvo Nieuws: ', null, null, '{{item.link}}');"></i>
+			</span>
+		</div>
+  	</ons-toolbar>
+	<ons-row>
+        <ons-col style="margin: 10px;" width="80%"> 
+          	 <h3>{{item.title}}</h3>
+          	 <img src="{{item.picture}}">
+    		 <p>{{item.desc}}</p>
+    	</ons-col>
+    </ons-row>
+</ons-page>

@@ -1,0 +1,77 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()">
+        <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+    <div class="center">Instellingen</div>
+  </ons-toolbar>
+  
+        <ons-list-header>Selecteer je campus</ons-list-header>
+               
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Campus Nijverheidskaai
+          </label>
+        </ons-list-item>
+       
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Campus Dansaert
+          </label>
+        </ons-list-item>
+       
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a" checked="checked">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Campus Jette
+          </label>
+        </ons-list-item>
+         
+        <ons-list-header>Notificaties</ons-list-header>
+         
+        <ons-list-item modifier="tappable">
+          <label class="checkbox checkbox--list-item">
+            <input type="checkbox">
+            <div class="checkbox__checkmark checkbox--noborder__checkmark checkbox--list-item__checkmark"></div>
+            Notificatie bij evenementen
+          </label>
+        </ons-list-item>
+       
+                <ons-list-item modifier="tappable">
+          <label class="checkbox checkbox--list-item">
+            <input type="checkbox">
+            <div class="checkbox__checkmark checkbox--noborder__checkmark checkbox--list-item__checkmark"></div>
+            Notificatie bij nog iets
+          </label>
+        </ons-list-item>
+ 
+ 
+<!-- Dit deel is vb code dat kan gebruikt worden als we het categoriën gedeelte gaan maken
+<ons-tabbar position="top">
+                <ons-tab page="home.html" active="true">
+                                    <ons-icon icon="ion-home"></ons-icon>
+                                    <span style="font-size: 14px">Home</span>
+                </ons-tab>
+                <ons-tab page="fav.html" active="true">
+                                    <ons-icon icon="ion-star"></ons-icon>
+                                    <span style="font-size: 14px">Favorites</span>
+                </ons-tab>
+                <ons-tab page="settings.html" active="true">
+                                    <ons-icon icon="ion-gear-a"></ons-icon>
+                                    <span style="font-size: 14px">Settings</span>
+                </ons-tab>
+            </ons-tabbar>    
+       
+    <div class="right" ng-controller="DropdownController">
+      <ons-button ng-click="popover.show($event);">Campus kiezen</ons-button>
+    </div>    
+ 
+</ons-page>
+-->
