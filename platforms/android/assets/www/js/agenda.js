@@ -14,7 +14,7 @@
   module.controller('EventMasterController', function($scope, $http,$data) {
     $scope.fetchNews = function(){
     	document.getElementById('agenda-loading').className = "";
-    	$http({method: 'GET', url: 'http://srv5.mvdw-software.com/workspace/Stuvo/backend/html/agenda.php'}).
+    	$http({method: 'GET', url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/agenda.php'}).
     	success(function(data, status) {
             var itemData = {items: []};
   			$.each( data['events'], function( month, eventData ) {

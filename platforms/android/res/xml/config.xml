@@ -27,4 +27,5 @@
     <content src="index.html" />
     <access origin="*" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" source="plugins.cordova.io" />
+    <gap:plugin name="nl.x-services.plugins.calendar" />
 </widget>
