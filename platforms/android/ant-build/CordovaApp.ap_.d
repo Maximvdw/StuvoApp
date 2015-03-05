@@ -40,7 +40,6 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/eventDetail.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen \
-/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/LICENSE \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/css \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/stylus \
@@ -65,7 +64,6 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/css/onsen-css-components-dark-theme.css \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/css/onsenui.css \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/css/onsen-css-components-sunshine-theme.css \
-/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/css/onsen-css-components.min.css \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/css/onsen-css-components-default.css \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/css/onsen-css-components-blue-theme.css \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/css/onsen-css-components-purple-theme.css \
@@ -92,7 +90,6 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/stylus/sunshine-theme.styl \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/stylus/default.styl \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/stylus/purple-theme.styl \
-/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/stylus/custom-theme.stylus \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/stylus/dark-theme.styl \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/stylus/components/list.styl \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/stylus/components/range.styl \

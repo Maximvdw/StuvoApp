@@ -37,6 +37,33 @@
         });
     }
     
+    $scope.refreshEvents = function($done){
+    	$http({method: 'GET', url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/agenda.php'}).
+    	success(function(data, status) {
+            var itemData = {items: []};
+  			$.each( data['events'], function( month, eventData ) {
+				$.each(eventData, function( eventId, event ) {
+				     itemData.items.push(
+	  	             { 
+		            	 shortdate: event['date']['short'],
+		            	 name: event['name'],
+		            	 description: event['description'],
+	        		 }
+      	       		);
+				});
+	    	});
+            $scope.items = itemData.items;
+            document.getElementById('agenda-loading').className = "hidden";
+        }).
+        error(function(data, status) {
+          $scope.data = data || "Request failed";
+          $scope.status = status;
+        }).
+        finally(function(){
+        	$done();
+        });
+    }
+    
     $scope.fetchNews();
     
     $scope.showDetail = function(index) {

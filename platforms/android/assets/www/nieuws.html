@@ -1,5 +1,5 @@
 <ons-navigator var="newsNavi">
-<ons-page>
+<ons-page ng-controller="NewsMasterController">
   <ons-toolbar>
     <div class="left">
       <ons-toolbar-button ng-click="menu.toggle()">
@@ -8,12 +8,18 @@
     </div>
     <div class="center">Stuvo Nieuws</div>
   </ons-toolbar>
-  <div class="hook" id="hook"></div>
+<ons-pull-hook ng-action="refreshNews($done)" var="loader">
+    <span ng-switch="loader.getCurrentState()">
+      <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Trek omlaag om te verversen</span>
+      <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Laat los om te verversen</span>
+      <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Bezig met laden...</span>
+    </span>
+</ons-pull-hook>
   <div id="nieuws">
     <div id="nieuws-loading" class="">
     	
     </div>
-  	<ons-list ng-controller="NewsMasterController" data-ng-init="fetchNews()">
+  	<ons-list data-ng-init="fetchNews()">
         <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
             <ons-col width="60px"> 

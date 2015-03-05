@@ -1,5 +1,5 @@
 <ons-navigator var="eventNavi">
-<ons-page>
+<ons-page ng-controller="EventMasterController">
   <ons-toolbar>
     <div class="left">
       <ons-toolbar-button ng-click="menu.toggle()">
@@ -8,11 +8,18 @@
     </div>
     <div class="center">Evenementen</div>
   </ons-toolbar>
+  <ons-pull-hook ng-action="refreshEvents($done)" var="loader">
+    <span ng-switch="loader.getCurrentState()">
+      <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Trek omlaag om te verversen</span>
+      <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Laat los om te verversen</span>
+      <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Bezig met laden...</span>
+    </span>
+</ons-pull-hook>
   <div id="agenda">
     <div id="agenda-loading" class="">
     	
     </div>
-  	<ons-list ng-controller="EventMasterController">
+  	<ons-list>
         <ons-list-item modifier="tappable" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
             <ons-col>
