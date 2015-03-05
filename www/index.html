@@ -13,6 +13,8 @@
 
   <script src="lib/onsen/js/angular/angular.js"></script>    
   <script src="lib/onsen/js/onsenui.js"></script>    
+  
+  <script src="cordova.js"></script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.timeago.js" type="text/javascript"></script>
@@ -23,7 +25,6 @@
   <script src="js/agenda.js"></script>  
   <script src="js/calendar.js"></script>
   <script src="js/notifications.js"></script>
-  <script src="cordova.js"></script>
   <script src="js/spons.js"></script>
   <script src="js/SocialSharing.js"></script>
   
@@ -124,12 +125,6 @@
       float: right;
     }
   </style>
-  <script>
-  function testCallback(){
-  	alert("GSM GELADEN!")
-  }
-  	document.addEventListener("deviceready", testCallback, false);
-  </script>
 </head>
 
 <body ng-controller="AppController">    

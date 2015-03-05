@@ -69,6 +69,6 @@
     $scope.showDetail = function(index) {
       var selectedItem = $scope.items[index];
       $data.selectedItem = selectedItem;
-      $scope.ons.navigator.pushPage('eventDetail.html', {title : selectedItem.title});
+      eventNavi.pushPage('eventDetail.html', {title : selectedItem.title});
     };
   });

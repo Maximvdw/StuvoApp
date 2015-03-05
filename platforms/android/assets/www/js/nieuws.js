@@ -71,6 +71,6 @@
     $scope.showDetail = function(index) {
       var selectedItem = $scope.items[index];
       $data.selectedItem = selectedItem;
-      $scope.ons.navigator.pushPage('nieuwsDetail.html', {title : selectedItem.title});
+      newsNavi.pushPage('nieuwsDetail.html', {title : selectedItem.title});
     };
   });
