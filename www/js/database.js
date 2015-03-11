@@ -1,9 +1,10 @@
 // Wait for Cordova to load
 document.addEventListener("deviceready", onDeviceReady, false);
-
+var db = null;
 // Cordova is ready
 function onDeviceReady() {
-  var db = window.sqlitePlugin.openDatabase({name: "stuvo.db"});
+  db = window.sqlitePlugin.openDatabase({name: "stuvo.db"});
+  resetSettings();
   db.transaction(function(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS settings (setting varchar(50) primary key, settingvalue varchar(50)');
 
@@ -42,4 +43,10 @@ function onDeviceReady() {
 
 function setSetting(setting,value){
 	
+}
+
+function resetSettings(){
+	db.transaction(function(tx) {
+	 	tx.executeSql('DROP TABLE IF EXISTS settings');
+	});
 }
