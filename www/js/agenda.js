@@ -24,18 +24,16 @@
 		            	 shortdate: event['date']['short'],
 		            	 name: event['name'],
 		            	 description: event['description'],
-		            	 date: {
-		            	 	startyear: event['date']['startyear'],
-		            	 	startmonth: event['date']['startmonth'],
-		            	 	startday: event['date']['startday'],
-		            	 	starthour: event['date']['starthour'],
-		            	 	startminute: event['date']['startminute'],
-		            	 	endyear: event['date']['endyear'],
-		            	 	endmonth: event['date']['endmonth'],
-		            	 	endday: event['date']['endday'],
-		            	 	endhour: event['date']['endhour'],
-		            	 	endminute: event['date']['endminute']
-		            	 }
+	            	 	startyear: event['date']['startyear'],
+	            	 	startmonth: event['date']['startmonth'],
+	            	 	startday: event['date']['startday'],
+	            	 	starthour: event['date']['starthour'],
+	            	 	startminute: event['date']['startminute'],
+	            	 	endyear: event['date']['endyear'],
+	            	 	endmonth: event['date']['endmonth'],
+	            	 	endday: event['date']['endday'],
+	            	 	endhour: event['date']['endhour'],
+	            	 	endminute: event['date']['endminute']
 	        		 }
       	       		);
 				});
@@ -60,18 +58,16 @@
 		            	 shortdate: event['date']['short'],
 		            	 name: event['name'],
 		            	 description: event['description'],
-		            	 date: {
-		            	 	startyear: event['date']['startyear'],
-		            	 	startmonth: event['date']['startmonth'],
-		            	 	startday: event['date']['startday'],
-		            	 	starthour: event['date']['starthour'],
-		            	 	startminute: event['date']['startminute'],
-		            	 	endyear: event['date']['endyear'],
-		            	 	endmonth: event['date']['endmonth'],
-		            	 	endday: event['date']['endday'],
-		            	 	endhour: event['date']['endhour'],
-		            	 	endminute: event['date']['endminute']
-		            	 }
+	            	 	startyear: event['date']['startyear'],
+	            	 	startmonth: event['date']['startmonth'],
+	            	 	startday: event['date']['startday'],
+	            	 	starthour: event['date']['starthour'],
+	            	 	startminute: event['date']['startminute'],
+	            	 	endyear: event['date']['endyear'],
+	            	 	endmonth: event['date']['endmonth'],
+	            	 	endday: event['date']['endday'],
+	            	 	endhour: event['date']['endhour'],
+	            	 	endminute: event['date']['endminute']
 	        		 }
       	       		);
 				});

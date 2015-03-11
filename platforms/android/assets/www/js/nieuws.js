@@ -46,16 +46,16 @@
     $scope.refreshNews = function($done){
     	$http({method: 'GET', url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/nieuws.php'}).
     	success(function(data, status) {
-    	         document.getElementById('nieuws-loading').className = "";
+    	  document.getElementById('nieuws-loading').className = "";
           var newsData = {items: []};
   			$.each( data['data'], function( postId, postData ) {
-      	     	var description = (postData['name'] == null ? postData['message'] : postData['description']);
+      	       var description = (postData['name'] == null ? postData['message'] : postData['description']);
       	       newsData.items.push(
   	             { 
             	  title: postData['name'],
               	  label: jQuery.timeago(postData['created_time']),
 	              desc: description,
-                  descshort: description.trunc(250),
+                  descshort: description == null ? "" : description.trunc(250),
 	              picture: postData['picture'],
 	              link: postData['link']
         		 }
