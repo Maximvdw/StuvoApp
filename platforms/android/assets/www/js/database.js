@@ -10,6 +10,7 @@ function onDeviceReady() {
     // demonstrate PRAGMA:
     db.executeSql("pragma table_info (settings);", [], function(res) {
       console.log("PRAGMA res: " + JSON.stringify(res));
+      alert(JSON.stringify(res))
     });
 
     tx.executeSql("INSERT INTO settings (setting,value) VALUES (?,?)", ["notifications_events", "0"], function(tx, res) {
@@ -25,6 +26,7 @@ function onDeviceReady() {
 
     }, function(e) {
       console.log("ERROR: " + e.message);
+      alert(e.message);
     });
   });
 }
