@@ -1,6 +1,8 @@
-  function fetchNews(){
-  	
-  }
+  
+  String.prototype.trunc = String.prototype.trunc ||
+      function(n){
+          return this.length>n ? this.substr(0,n-1)+' ...' : this;
+      };
   module.controller('AppController', function($scope) {
 	
   });
@@ -15,16 +17,18 @@
 
   module.controller('NewsMasterController', function($scope, $http,$data) {
     $scope.fetchNews = function(){
-    	document.getElementById('nieuws-loading').className = "";
     	$http({method: 'GET', url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/nieuws.php'}).
     	success(function(data, status) {
+    	  document.getElementById('nieuws-loading').className = "";
           var newsData = {items: []};
   			$.each( data['data'], function( postId, postData ) {
+  				var description = (postData['name'] == null ? postData['message'] : postData['description']);
       	       newsData.items.push(
   	             { 
             	  title: postData['name'],
               	  label: jQuery.timeago(postData['created_time']),
-	              desc: postData['name'] == null ? postData['message'] : postData['description'],
+	              desc: description,
+                  descshort: description == null ? "" : description.trunc(250),
 	              picture: postData['picture'],
 	              link: postData['link']
         		 }
@@ -42,13 +46,16 @@
     $scope.refreshNews = function($done){
     	$http({method: 'GET', url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/nieuws.php'}).
     	success(function(data, status) {
+    	         document.getElementById('nieuws-loading').className = "";
           var newsData = {items: []};
   			$.each( data['data'], function( postId, postData ) {
+      	     	var description = (postData['name'] == null ? postData['message'] : postData['description']);
       	       newsData.items.push(
   	             { 
             	  title: postData['name'],
               	  label: jQuery.timeago(postData['created_time']),
-	              desc: postData['name'] == null ? postData['message'] : postData['description'],
+	              desc: description,
+                  descshort: description.trunc(250),
 	              picture: postData['picture'],
 	              link: postData['link']
         		 }
@@ -74,3 +81,4 @@
       newsNavi.pushPage('nieuwsDetail.html', {title : selectedItem.title});
     };
   });
+ 

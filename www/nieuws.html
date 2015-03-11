@@ -20,7 +20,7 @@
     	
     </div>
   	<ons-list data-ng-init="fetchNews()">
-        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index);">
           <ons-row>
             <ons-col width="60px"> 
               <div class="item-thum" style="background-image: url({{item.picture}});"></div>
@@ -30,7 +30,7 @@
                 <span class="item-title">{{item.title}}</span>
                 <span class="item-label">{{item.label}}</span>
               </header>
-              <p class="item-desc">{{item.desc}}</p>
+              <p class="item-desc">{{item.descshort}}</p>
             </ons-col>
           </ons-row>                          
         </ons-list-item>

@@ -122,8 +122,8 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/nieuws.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/spons.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/app.js \
-/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/SocialSharing.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/calendar.js \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/database.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/styles/onsen-css-components-blue-basic-theme.css \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/styles/hook.css \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/styles/onsen-css-components.css \
