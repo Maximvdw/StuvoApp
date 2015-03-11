@@ -9,8 +9,9 @@
 
   module.controller('NewsDetailController', function($scope,$data) {
     $scope.item = $data.selectedItem;
-    $scope.window = window;
-    $scope.addToCalendar = addToCalendar;
+    $scope.share = function(){
+    	window.plugins.socialsharing.share('Stuvo Nieuws: ', null, null, $scope.item.link);
+    }
   });
   
   module.factory('$data',function(){

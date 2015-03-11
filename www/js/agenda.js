@@ -5,8 +5,14 @@
 
   module.controller('EventDetailController', function($scope,$data) {
     $scope.item = $data.selectedItem;
-    $scope.window = window;
-    $scope.addToCalendar = addToCalendar;
+    $scope.share = function(){
+    	window.plugins.socialsharing.share('Stuvo Event: ', null, null, $scope.item.link);
+    }
+    $scope.addToCalendar = function(){
+    	addToCalendar($scope.item.name,'',$scope.item.description,$scope.item.startyear,$scope.item.startmonth,
+    	$scope.item.startday,$scope.item.starthour,$scope.item.startminute,$scope.item.endyear,$scope.item.endmonth,
+    	$scope.item.endday,$scope.item.endhour,$scope.item.endminute);
+    }
   });
   
   module.factory('$data',function(){
