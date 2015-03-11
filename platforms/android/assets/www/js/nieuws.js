@@ -17,9 +17,9 @@
 
   module.controller('NewsMasterController', function($scope, $http,$data) {
     $scope.fetchNews = function(){
+    	document.getElementById('nieuws-loading').className = "";
     	$http({method: 'GET', url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/nieuws.php'}).
     	success(function(data, status) {
-    	  document.getElementById('nieuws-loading').className = "";
           var newsData = {items: []};
   			$.each( data['data'], function( postId, postData ) {
   				var description = (postData['name'] == null ? postData['message'] : postData['description']);

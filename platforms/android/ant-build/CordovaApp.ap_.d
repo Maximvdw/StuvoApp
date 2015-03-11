@@ -31,6 +31,7 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/cordova_plugins.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/index.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/menu.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/evenementen.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/nieuws.html \
