@@ -5,6 +5,8 @@
 
   module.controller('EventDetailController', function($scope,$data) {
     $scope.item = $data.selectedItem;
+    $scope.window = window;
+    $scope.addToCalendar = addToCalendar;
   });
   
   module.factory('$data',function(){
@@ -45,7 +47,8 @@
           $scope.data = data || "Request failed";
           $scope.status = status;
         });
-    }
+    };
+   
     
     $scope.refreshEvents = function($done){
     	$http({method: 'GET', url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/agenda.php'}).
@@ -82,7 +85,7 @@
         finally(function(){
         	$done();
         });
-    }
+    };
     
     $scope.fetchNews();
     

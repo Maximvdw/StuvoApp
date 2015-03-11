@@ -9,6 +9,8 @@
 
   module.controller('NewsDetailController', function($scope,$data) {
     $scope.item = $data.selectedItem;
+    $scope.window = window;
+    $scope.addToCalendar = addToCalendar;
   });
   
   module.factory('$data',function(){
