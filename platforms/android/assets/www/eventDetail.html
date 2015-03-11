@@ -5,10 +5,10 @@
 		<div class="center">Evenement</div>
 		<div class="right">
 		    <span class="toolbar-button--quiet navigation-bar__line-height">
-				<i class="ion-android-calendar" style="font-size:20px;" onclick="addToCalendar('{{item.name}}','','{{item.description}}','{{item.startyear}}','{{item.startmonth}}','{{item.startday}}','{{itemstarthour}}','{{item.startminute}}','{{item.endyear}}','{{item.endmonth}}','{{item.endday}}','{{item.endhour}}','{{item.endminute}}');"></i>
+				<i class="ion-android-calendar" style="font-size:20px;" ng-click="addToCalendar('{{item.name}}','','{{item.description}}','{{item.startyear}}','{{item.startmonth}}','{{item.startday}}','{{itemstarthour}}','{{item.startminute}}','{{item.endyear}}','{{item.endmonth}}','{{item.endday}}','{{item.endhour}}','{{item.endminute}}');"></i>
 			</span>
 			<span class="toolbar-button--quiet navigation-bar__line-height">
-				<i class="ion-android-share" style="font-size:20px;" onclick="window.plugins.socialsharing.share('Stuvo Event: ', null, null, '{{item.link}}');"></i>
+				<i class="ion-android-share" style="font-size:20px;" ng-click="window.plugins.socialsharing.share('Stuvo Event: ', null, null, '{{item.link}}');"></i>
 			</span>
 		</div>
   	</ons-toolbar>

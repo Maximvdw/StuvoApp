@@ -128,21 +128,10 @@
 </head>
 
 <body ng-controller="AppController">    
-  <div ons-if-orientation="landscape">
-	  <ons-split-view
-	    secondary-page="menu.html"
-	    main-page="nieuws.html"
-	    main-page-width="70%"
-	    collapse="portrait">
-	  </ons-split-view>
-	</div>
-	
-	<div ons-if-orientation="portrait">
   <ons-sliding-menu
     menu-page="menu.html" main-page="nieuws.html" side="left"
     var="menu" type="reveal" max-slide-distance="260px" swipable="true">
   </ons-sliding-menu>
-	</div>
  
 </body>
 </html>
