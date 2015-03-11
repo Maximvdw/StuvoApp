@@ -5,9 +5,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
   var db = window.sqlitePlugin.openDatabase({name: "stuvo.db"});
   db.transaction(function(tx) {
-    tx.executeSql('CREATE TABLE IF NOT EXISTS settings (setting varchar(50) primary key, value varchar(50)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS settings (setting varchar(50) primary key, settingvalue varchar(50)');
 
-    tx.executeSql("INSERT INTO settings (setting,value) VALUES (?,?)", ["notifications_events", "0"], function(tx, res) {
+    tx.executeSql("INSERT INTO settings (setting,settingvalue) VALUES (?,?)", ["notifications_events", "0"], function(tx, res) {
       console.log("insertId: " + res.insertId + " -- probably 1");
       alert("rowsAffected: " + res.rowsAffected + " -- should be 1");
 
@@ -20,9 +20,9 @@ function onDeviceReady() {
 
     }, function(e) {
       console.log("ERROR: " + e.message);
-      alert(e.message);
+      alert("ERROR: " + e.message);
     });
-     tx.executeSql("INSERT INTO settings (setting,value) VALUES (?,?)", ["notifications_news", "0"], function(tx, res) {
+     tx.executeSql("INSERT INTO settings (setting,settingvalue) VALUES (?,?)", ["notifications_news", "0"], function(tx, res) {
       console.log("insertId: " + res.insertId + " -- probably 1");
       alert("rowsAffected: " + res.rowsAffected + " -- should be 1");
 
@@ -35,7 +35,11 @@ function onDeviceReady() {
 
     }, function(e) {
       console.log("ERROR: " + e.message);
-      alert(e.message);
+      alert("ERROR: " + e.message);
     });
   });
+}
+
+function setSetting(setting,value){
+	
 }
