@@ -1,5 +1,5 @@
-<ons-page>
-  <ons-toolbar>
+<ons-page ng-controller="SponsorsController">
+ <ons-toolbar>
     <div class="left">
       <ons-toolbar-button ng-click="menu.toggle()">
         <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
@@ -7,9 +7,21 @@
     </div>
     <div class="center">Onze sponsors</div>
   </ons-toolbar>
-  <div id="sponsors" onload="xml();">
-  <a>test</a>
-
-  	<table id="spons" > </table>
+  <div id="sponsors">
+  		<ons-list data-ng-init="loadsponsor()">
+        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" >
+          <ons-row>
+            <ons-col>
+              <header>
+                <span >{{item.departement}}</span>
+                <span>{{item.voornaam}}</span>
+                <span >{{item.achternaam}}</span>
+                <span >{{item.email}}</span>
+                <span >{{item.telefoonnummer}}</span>
+              </header>
+            </ons-col>
+          </ons-row>                          
+        </ons-list-item>
+      </ons-list>
   </div>
 </ons-page>

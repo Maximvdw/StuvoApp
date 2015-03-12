@@ -17,6 +17,12 @@
     <feature name="PushPlugin">
         <param name="android-package" value="com.plugin.gcm.PushPlugin" />
     </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="LocalNotification">
+        <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
+    </feature>
     <name>StuvoApp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -28,7 +34,7 @@
     <access origin="*" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
     <gap:plugin name="nl.x-services.plugins.calendar" version="4.2.4" />
-    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
     <gap:plugin name="com.millerjames01.sqlite-plugin" version="1.0.1" />
     <gap:plugin name="com.jamiestarke.webviewdebug" version="1.0.8" />
 </widget>

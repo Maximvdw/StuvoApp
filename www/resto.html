@@ -1,0 +1,68 @@
+<ons-page ng-controller="RestoController">
+	<ons-navigator var="navi">
+		<ons-toolbar>
+			<div class="left">
+				<ons-toolbar-button ng-click="menu.toggle()">
+					<ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+				</ons-toolbar-button>
+			</div>
+			<div class="center">Studenten Restaurants</div>
+		</ons-toolbar>
+		<div class="navigation-bar">
+			<div class="navigation-bar__center">
+				<div class="button-bar" style="width:90%; margin:8px auto 0;">
+					<div class="button-bar__item">
+						<input type="radio" ng-model="section" value="0" name="navi-segment-a" checked>
+						<div class="button-bar__button">Ma.</div>
+					</div>
+					<div class="button-bar__item">
+						<input type="radio" ng-model="section" value="1" name="navi-segment-b">
+						<div class="button-bar__button">Di.</div>
+					</div>
+					<div class="button-bar__item">
+						<input type="radio" ng-model="section" value="2" name="navi-segment-c">
+						<div class="button-bar__button">Wo.</div>
+					</div>
+					<div class="button-bar__item">
+						<input type="radio" ng-model="section" value="3" name="navi-segment-d">
+						<div class="button-bar__button">Do.</div>
+					</div>
+					<div class="button-bar__item">
+						<input type="radio" ng-model="section" value="4" name="navi-segment-e">
+						<div class="button-bar__button">Vr.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul class="list" ng-show="section == '0'">
+			<div ng-repeat="item in items['MAANDAG/LUNDI'].maaltijden">
+				<li class="list__header">{{item.name}}</li>
+				<li class="list__item">{{item.voeding}}</li>
+			</div>
+		</ul>
+		<ul class="list" ng-show="section == '1'">
+			<div ng-repeat="item in items['DINSDAG\/MARDI'].maaltijden">
+				<li class="list__header">{{item.name}}</li>
+				<li class="list__item">{{item.voeding}}</li>
+			</div>
+		</ul>
+		<ul class="list" ng-show="section == '2'">
+			<div ng-repeat="item in items['WOENSDAG\/MERCREDI'].maaltijden">
+				<li class="list__header">{{item.name}}</li>
+				<li class="list__item">{{item.voeding}}</li>
+			</div>
+		</ul>
+		<ul class="list" ng-show="section == '3'">
+			<div ng-repeat="item in items['DONDERDAG\/JEUDI'].maaltijden">
+				<li class="list__header">{{item.name}}</li>
+				<li class="list__item">{{item.voeding}}</li>
+			</div>
+		</ul>
+		<ul class="list" ng-show="section == '4'">
+			<div ng-repeat="item in items['VENDREDI\/VRIJDAG'].maaltijden">
+				<li class="list__header">{{item.name}}</li>
+				<li class="list__item">{{item.voeding}}</li>
+			</div>
+		</ul>
+	</ons-navigator>
+</ons-page>

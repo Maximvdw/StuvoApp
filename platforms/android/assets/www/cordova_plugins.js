@@ -38,6 +38,21 @@ module.exports = [
         "clobbers": [
             "window.TapToScroll"
         ]
+    },
+    {
+        "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
+        "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
+        "clobbers": [
+            "cordova.plugins.notification.local",
+            "plugin.notification.local"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.device/www/device.js",
+        "id": "org.apache.cordova.device.device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -48,7 +63,9 @@ module.exports.metadata =
     "com.jamiestarke.webviewdebug": "1.0.8",
     "com.brodysoft.sqlitePlugin": "1.0.4",
     "com.phonegap.plugins.PushPlugin": "2.4.0",
-    "com.phonegap.TapToScroll": "0.1.0"
+    "com.phonegap.TapToScroll": "0.1.0",
+    "de.appplant.cordova.plugin.local-notification": "0.8.1",
+    "org.apache.cordova.device": "0.3.0"
 }
 // BOTTOM OF METADATA
 });

@@ -12,6 +12,11 @@
     $scope.share = function(){
     	window.plugins.socialsharing.share('Stuvo Nieuws: ', null, null, $scope.item.link);
     }
+    /* Dit is om bij nieuwsDetail.html ervoor te zorgen dat indien <=200 er tekst onder de foto komt en anders rond de foto
+    var keuze = $scope.item.desc;
+    if (keuze<=200 characters ) <img src="{{item.picture}}">
+    else <img src="{{item.picture}}" align="left" style="margin: 0px 5px 0px 0px">
+    */
   });
   
   module.factory('$data',function(){

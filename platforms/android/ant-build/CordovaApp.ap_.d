@@ -32,6 +32,7 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/index.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/menu.html \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/contacten.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/evenementen.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/nieuws.html \
@@ -39,6 +40,7 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/nieuwsDetail.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/img \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/eventDetail.html \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/resto.html \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/lib/onsen/js \
@@ -118,7 +120,9 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/notifications.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/jquery.timeago.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/hook.min.js \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/contacten.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/mousewheel.js \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/resto.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/agenda.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/nieuws.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/js/spons.js \
@@ -179,8 +183,10 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.brodysoft.sqlitePlugin \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.calendar \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.socialsharing \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.phonegap.TapToScroll \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.brodysoft.sqlitePlugin/www \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.brodysoft.sqlitePlugin/www/SQLitePlugin.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.calendar/www \
@@ -189,8 +195,12 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.calendar/test/tests.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.socialsharing/www \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification/www \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin/www \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.phonegap.TapToScroll/www \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.phonegap.TapToScroll/www/taptoscroll.js \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/ant-build/AndroidManifest.xml \
