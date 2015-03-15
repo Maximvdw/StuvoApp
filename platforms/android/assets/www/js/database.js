@@ -3,39 +3,32 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var db = null;
 // Cordova is ready
 function onDeviceReady() {
-	db = window.sqlitePlugin.openDatabase({
-		name: "stuvo.db"
+	var db = window.sqlitePlugin.openDatabase({
+		name: "my.db"
 	});
-	resetSettings();
-	db.transaction(function(tx) {
-		tx.executeSql('CREATE TABLE IF NOT EXISTS settings (setting varchar(50) primary key, settingvalue varchar(50)');
 
-		tx.executeSql("INSERT INTO settings (setting,settingvalue) VALUES (?,?)", ["notifications_events", "0"], function(tx, res) {
+	db.transaction(function(tx) {
+		tx.executeSql('DROP TABLE IF EXISTS test_table');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS test_table (id integer primary key, data text, data_num integer)');
+
+		// demonstrate PRAGMA:
+		db.executeSql("pragma table_info (test_table);", [], function(res) {
+			console.log("PRAGMA res: " + JSON.stringify(res));
+		});
+
+		tx.executeSql("INSERT INTO test_table (data, data_num) VALUES (?,?)", ["test", 100], function(tx, res) {
+			console.log("insertId: " + res.insertId + " -- probably 1");
+			console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
+
+			db.transaction(function(tx) {
+				tx.executeSql("select count(id) as cnt from test_table;", [], function(tx, res) {
+					console.log("res.rows.length: " + res.rows.length + " -- should be 1");
+					console.log("res.rows.item(0).cnt: " + res.rows.item(0).cnt + " -- should be 1");
+				});
+			});
 
 		}, function(e) {
-
-
-		});
-		db.transaction(function(tx) {
-			alert("PREPARING SELECT*");
-			tx.executeSql("select count(setting) as cnt from settings;", [], function(tx, res) {
-				console.log("res.rows.length: " + res.rows.length + " -- should be 1");
-				console.log("res.rows.item(0).cnt: " + res.rows.item(0).cnt + " -- should be 1");
-				alert(res.rows.item(0).cnt);
-			});
-		});
-
-
-		tx.executeSql("INSERT INTO settings (setting,settingvalue) VALUES (?,?)", ["notifications_news", "0"], function(tx, res) {
-
-		}, function(e) {});
-
-		db.transaction(function(tx) {
-			tx.executeSql("select count(setting) as cnt from settings;", [], function(tx, res) {
-				console.log("res.rows.length: " + res.rows.length + " -- should be 1");
-				console.log("res.rows.item(0).cnt: " + res.rows.item(0).cnt + " -- should be 1");
-				alert(res.rows.item(0).cnt);
-			});
+			console.log("ERROR: " + e.message);
 		});
 	});
 }
