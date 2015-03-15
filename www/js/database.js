@@ -50,18 +50,19 @@ function onDeviceReady() {
 			else
 				settings.notifications_events = false;
 		});
-	});
 
-	setSetting("notification_news", "1");
+		setSetting("notification_news", "1");
+	});
 }
 
 function setSetting(setting, value) {
 	db.transaction(function(tx) {
+		console.log("Saving setting: " + setting + " = " + value);
 		tx.executeSql("UPDATE TABLE settings SET value = ? WHERE key = ?", [value, setting], function(tx, res) {
 			console.log("insertId: " + res.insertId + " -- probably 1");
 			console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
 		}, function(e) {
-			console.log("ERROR: " + e.message);
+			console.log("ERROR UPDATE: " + e.message);
 		});
 	});
 }
