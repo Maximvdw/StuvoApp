@@ -5,6 +5,11 @@
  			url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/resto.php'
  		}).
  		success(function(data, status) {
+ 			document.getElementById('resto-ma-loading').className = "";
+ 			document.getElementById('resto-di-loading').className = "";
+ 			document.getElementById('resto-wo-loading').className = "";
+ 			document.getElementById('resto-do-loading').className = "";
+ 			document.getElementById('resto-vr-loading').className = "";
  			var newsData = {
  				items: []
  			};
@@ -20,6 +25,11 @@
  				});
  			});
  			$scope.items = newsData.items;
+ 			document.getElementById('resto-ma-loading').className = "hidden";
+ 			document.getElementById('resto-di-loading').className = "hidden";
+ 			document.getElementById('resto-wo-loading').className = "hidden";
+ 			document.getElementById('resto-do-loading').className = "hidden";
+ 			document.getElementById('resto-vr-loading').className = "hidden";
  		}).
  		error(function(data, status) {
  			$scope.data = data || "Request failed";

@@ -14,8 +14,10 @@ function onDeviceReady() {
 
 		}, function(e) {
 
+
 		});
 		db.transaction(function(tx) {
+			alert("PREPARING SELECT*");
 			tx.executeSql("select count(setting) as cnt from settings;", [], function(tx, res) {
 				console.log("res.rows.length: " + res.rows.length + " -- should be 1");
 				console.log("res.rows.item(0).cnt: " + res.rows.item(0).cnt + " -- should be 1");
