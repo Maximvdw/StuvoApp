@@ -7,7 +7,28 @@
 		</div>
 		<div class="center">Contact lijst</div>
 	</ons-toolbar>
-	<div id="contacten">
+
+	<body>
+		<div id="contacten">
+			<table data-ng-init="fetchSponsor()" modifier="chevron" class="item" ng-repeat="item in items" style="width:100%">
+				<h2>Lijst van contacten:</h2>
+				<tr>
+					<th>Departement</th>
+					<th>Voornaam</th>
+					<th>Achternaam</th>
+					<th>Email</th>
+					<th>Telefoonnummer</th>
+				</tr>
+				<tr>
+					<td>{{item.departement}}</td>
+					<td>{{item.voornaam}}</td>
+					<td>{{item.achternaam}}</td>
+					<td>{{item.email}}</td>
+					<td>{{item.telefoonnummer}}</td>
+				</tr>
+			</table>
+	</body>
+	<!--
 		<ons-list data-ng-init="fetchContacten()">
 			<ons-list-item modifier="chevron" class="item" ng-repeat="item in items">
 				<ons-row>
@@ -22,6 +43,6 @@
 					</ons-col>
 				</ons-row>
 			</ons-list-item>
-		</ons-list>
+		</ons-list>-->
 	</div>
 </ons-page>

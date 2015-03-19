@@ -1,40 +1,40 @@
 <ons-navigator var="newsNavi">
-<ons-page ng-controller="NewsMasterController">
-  <ons-toolbar>
-    <div class="left">
-      <ons-toolbar-button ng-click="menu.toggle()">
-        <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-      </ons-toolbar-button>
-    </div>
-    <div class="center">Stuvo Nieuws</div>
-  </ons-toolbar>
-<ons-pull-hook ng-action="refreshNews($done)" var="loader">
-    <span ng-switch="loader.getCurrentState()">
+	<ons-page ng-controller="NewsMasterController">
+		<ons-toolbar>
+			<div class="left">
+				<ons-toolbar-button ng-click="menu.toggle()">
+					<ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+				</ons-toolbar-button>
+			</div>
+			<div class="center">Stuvo Nieuws</div>
+		</ons-toolbar>
+		<ons-pull-hook ng-action="refreshNews($done)" var="loader">
+			<span ng-switch="loader.getCurrentState()">
       <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Trek omlaag om te verversen</span>
-      <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Laat los om te verversen</span>
-      <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Bezig met laden...</span>
-    </span>
-</ons-pull-hook>
-  <div id="nieuws">
-    <div id="nieuws-loading" class="">
-    	
-    </div>
-  	<ons-list data-ng-init="fetchNews()">
-        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index);">
-          <ons-row>
-            <ons-col width="60px"> 
-              <div class="item-thum" style="background-image: url({{item.picture}});"></div>
-            </ons-col>
-            <ons-col>
-              <header>
-                <span class="item-title">{{item.title}}</span>
-                <span class="item-label">{{item.label}}</span>
-              </header>
-              <p class="item-desc">{{item.descshort}}</p>
-            </ons-col>
-          </ons-row>                          
-        </ons-list-item>
-      </ons-list>
-  </div>
-</ons-page>
+			<span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Laat los om te verversen</span>
+			<span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Bezig met laden...</span>
+			</span>
+		</ons-pull-hook>
+		<div id="nieuws">
+			<ons-scroller data-ng-init="fetchNews();" infinit-scroll-enable="true" on-scrolled="fetchNewNews()" can-load="true" threshold="25" style="height: 100%">
+				<ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index);">
+					<ons-row>
+						<ons-col width="60px">
+							<div class="item-thum" style="background-image: url({{item.picture}});"></div>
+						</ons-col>
+						<ons-col>
+							<header>
+								<span class="item-title">{{item.title}}</span>
+								<span class="item-label">{{item.label}}</span>
+							</header>
+							<p class="item-desc">{{item.descshort}}</p>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<div id="nieuws-loading" class="" ng-show="isLoading">
+
+				</div>
+			</ons-scroller>
+		</div>
+	</ons-page>
 </ons-navigator>

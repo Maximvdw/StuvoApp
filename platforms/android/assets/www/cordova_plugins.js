@@ -48,6 +48,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.colibrisoftware.plugins.backgroundjs/src/js/BackgroundJS.js",
+        "id": "com.colibrisoftware.plugins.backgroundjs.BackgroundJS",
+        "clobbers": [
+            "window.plugin.backgroundjs"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.device/www/device.js",
         "id": "org.apache.cordova.device.device",
         "clobbers": [
@@ -65,6 +72,7 @@ module.exports.metadata =
     "com.phonegap.plugins.PushPlugin": "2.4.0",
     "com.phonegap.TapToScroll": "0.1.0",
     "de.appplant.cordova.plugin.local-notification": "0.8.1",
+    "com.colibrisoftware.plugins.backgroundjs": "3.3",
     "org.apache.cordova.device": "0.3.0"
 }
 // BOTTOM OF METADATA

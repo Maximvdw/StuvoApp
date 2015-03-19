@@ -172,6 +172,7 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/styles/stylus/components/navigation-bar.styl \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/styles/stylus/components/search-input.styl \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/styles/stylus/components/util.styl \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/img/logo0.png \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/img/nav-icon.png \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/img/hook-spinner.gif \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/img/hook-spinner.png \
@@ -181,6 +182,7 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/img/hook-bgs.png \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/img/hook-bg.png \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.brodysoft.sqlitePlugin \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.colibrisoftware.plugins.backgroundjs \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.calendar \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.socialsharing \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification \
@@ -189,6 +191,9 @@
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.brodysoft.sqlitePlugin/www \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.brodysoft.sqlitePlugin/www/SQLitePlugin.js \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.colibrisoftware.plugins.backgroundjs/src \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.colibrisoftware.plugins.backgroundjs/src/js \
+/var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/com.colibrisoftware.plugins.backgroundjs/src/js/BackgroundJS.js \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.calendar/www \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.calendar/test \
 /var/www/codiad/workspace/Stuvo/platforms/android/assets/www/plugins/nl.x-services.plugins.calendar/www/Calendar.js \

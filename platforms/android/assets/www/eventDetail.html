@@ -1,21 +1,26 @@
 <ons-page ng-controller="EventDetailController">
 
 	<ons-toolbar>
-	 	<div class="left"><ons-back-button>Terug</ons-back-button></div>
+		<div class="left">
+			<ons-back-button>Terug</ons-back-button>
+		</div>
 		<div class="center">Evenement</div>
 		<div class="right">
-		    <span class="toolbar-button--quiet navigation-bar__line-height">
+			<span class="toolbar-button--quiet navigation-bar__line-height">
+				<i href="http://maps.google.com/maps?q=VUB" class="ion-android-map" style="font-size:20px;"></i>
+			</span>
+			<span class="toolbar-button--quiet navigation-bar__line-height">
 				<i class="ion-android-calendar" style="font-size:20px;" ng-click="addToCalendar();"></i>
 			</span>
 			<span class="toolbar-button--quiet navigation-bar__line-height">
-				<i class="ion-android-share" style="font-size:20px;" ng-click="share();"></i>
+				<i class="ion-android-share-alt" style="font-size:20px;" ng-click="share();"></i>
 			</span>
 		</div>
-  	</ons-toolbar>
+	</ons-toolbar>
 	<ons-row>
-        <ons-col style="margin: 10px;" width="80%"> 
-          	 <h3>{{item.name}}</h3>
-    		 <p>{{item.description}}</p>
-    	</ons-col>
-    </ons-row>
+		<ons-col style="margin: 10px;" width="80%">
+			<h3>{{item.name}}</h3>
+			<p>{{item.description}}</p>
+		</ons-col>
+	</ons-row>
 </ons-page>

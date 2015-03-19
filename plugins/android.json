@@ -160,6 +160,9 @@
         },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "be.ehb.stuvo"
+        },
+        "com.colibrisoftware.plugins.backgroundjs": {
+            "PACKAGE_NAME": "be.ehb.stuvo"
         }
     },
     "dependent_plugins": {
