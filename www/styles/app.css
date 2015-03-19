@@ -1,3 +1,9 @@
+@media screen and (max-width: 500px) {
+	#sponsor img {
+		max-width:100%;
+		min-width:100%;
+	}
+}
 .left {
 	text-align: left;
 }
@@ -63,10 +69,6 @@
 }
 #resto-vr-loading.hidden {
 	display: none;
-}
-#sponsor img {
-	max-width:50%;
-	min-width:50%;
 }
 .button-bar {
 	font-family:'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
