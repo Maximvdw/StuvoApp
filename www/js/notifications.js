@@ -4,6 +4,7 @@ document.addEventListener("deviceready", function() {
 
 	function checkNotifications() {
 		// Schedule notification for tomorrow to remember about the meeting
+
 		window.plugin.notification.local.add({
 			message: 'Notificatie test'
 		});

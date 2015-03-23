@@ -10,22 +10,20 @@
 
 	<body>
 		<div id="contacten">
-			<table data-ng-init="fetchSponsor()" modifier="chevron" class="item" ng-repeat="item in items" style="width:100%">
-				<h2>Lijst van contacten:</h2>
+			<table data-ng-init="fetchSponsor()" modifier="chevron" class="item" ng-repeat="item in items">
 				<tr>
-					<th>Departement</th>
-					<th>Voornaam</th>
-					<th>Achternaam</th>
-					<th>Email</th>
-					<th>Telefoonnummer</th>
+					<td>
+						<h2>Lijst van contacten:</h2>
+					</td>
 				</tr>
 				<tr>
-					<td>{{item.departement}}</td>
-					<td>{{item.voornaam}}</td>
-					<td>{{item.achternaam}}</td>
-					<td>{{item.email}}</td>
-					<td>{{item.telefoonnummer}}</td>
+					<td id="departement">{{item.departement}}</td>
+					<td id="voornaam">{{item.voornaam}}</td>
+					<td id="achternaam">{{item.achternaam}}</td>
+					<td id="email">{{item.email}}</td>
+					<td id="telefoonnummer">{{item.telefoonnummer}}</td>
 				</tr>
+				<br/>
 			</table>
 	</body>
 	<!--

@@ -1,0 +1,48 @@
+<ons-page ng-controller="ContactenController">
+	<ons-toolbar>
+		<div class="left">
+			<ons-toolbar-button ng-click="menu.toggle()">
+				<ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">Contact lijst</div>
+	</ons-toolbar>
+
+	<body>
+		<div id="contacten">
+			<table data-ng-init="fetchSponsor()" modifier="chevron" class="item" ng-repeat="item in items" style="width:100%">
+				<h2>Lijst van contacten:</h2>
+				<tr>
+					<th>Departement</th>
+					<th>Voornaam</th>
+					<th>Achternaam</th>
+					<th>Email</th>
+					<th>Telefoonnummer</th>
+				</tr>
+				<tr>
+					<td>{{item.departement}}</td>
+					<td>{{item.voornaam}}</td>
+					<td>{{item.achternaam}}</td>
+					<td>{{item.email}}</td>
+					<td>{{item.telefoonnummer}}</td>
+				</tr>
+			</table>
+	</body>
+	<!--
+		<ons-list data-ng-init="fetchContacten()">
+			<ons-list-item modifier="chevron" class="item" ng-repeat="item in items">
+				<ons-row>
+					<ons-col>
+						<header>
+							<span>{{item.departement}}</span>
+							<span>{{item.voornaam}}</span>
+							<span>{{item.achternaam}}</span>
+							<span>{{item.email}}</span>
+							<span>{{item.telefoonnummer}}</span>
+						</header>
+					</ons-col>
+				</ons-row>
+			</ons-list-item>
+		</ons-list>-->
+	</div>
+</ons-page>

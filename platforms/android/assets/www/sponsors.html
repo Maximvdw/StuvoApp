@@ -1,0 +1,41 @@
+<ons-page ng-controller="SponsorsController">
+	<ons-toolbar>
+
+		<div class="left">
+			<ons-toolbar-button ng-click="menu.toggle()">
+				<ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">Sponsor lijst</div>
+	</ons-toolbar>
+	<div id="sponsor">
+		<table data-ng-init="fetchSponsor()" modifier="chevron" class="item" ng-repeat="item in items" style="width: 100%;">
+			<tr>
+				<td>
+					<a href="{{item.link}}"><img src="{{item.image}}" /></a>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="{{item.link}}">bri)k</a></td>
+			</tr>
+			<tr>
+				<td id="titel">{{item.beschrijving}}</td>
+			</tr>
+			<br/>
+		</table>
+		<!--		<ons-list data-ng-init="fetchSponsor()">
+			<ons-list-item modifier="chevron" class="item" ng-repeat="item in items">
+				<ons-row>
+					<ons-col>
+						<header>
+							<span>{{item.naam}}</span>
+							<span>{{item.beschrijving}}</span>
+							<span>{{item.link}}</span>
+							<span>{{item.image}}</span>
+						</header>
+					</ons-col>
+				</ons-row>
+			</ons-list-item>
+		</ons-list>-->
+	</div>
+</ons-page>

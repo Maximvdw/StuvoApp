@@ -1,0 +1,40 @@
+<ons-navigator var="eventNavi">
+	<ons-page ng-controller="EventMasterController">
+		<ons-toolbar>
+			<div class="left">
+				<ons-toolbar-button ng-click="menu.toggle()">
+					<ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+				</ons-toolbar-button>
+			</div>
+			<div class="center">Evenementen</div>
+		</ons-toolbar>
+		<ons-pull-hook ng-action="refreshEvents($done)" var="loader">
+			<span ng-switch="loader.getCurrentState()">
+      <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Trek omlaag om te verversen</span>
+			<span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Laat los om te verversen</span>
+			<span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Bezig met laden...</span>
+			</span>
+		</ons-pull-hook>
+		<div id="agenda">
+			<div id="agenda-loading" class="">
+
+			</div>
+			<ons-scroller>
+				<div ng-repeat="maand in maanden" ng-init="maandIndex = $index">
+					<li class="list__header">{{maand.name}}</li>
+					<ons-list-item modifier="tappable" class="item" ng-repeat="item in maand.items" ng-click="showDetail(maandIndex,$index);">
+						<ons-row>
+							<ons-col>
+								<header>
+									<span class="item-title">{{item.name}}</span>
+									<span class="item-label">{{item.shortdate}}</span>
+								</header>
+								<p class="item-desc">{{item.description}}</p>
+							</ons-col>
+						</ons-row>
+					</ons-list-item>
+				</div>
+			</ons-scroller>
+		</div>
+	</ons-page>
+</ons-navigator>
