@@ -7,6 +7,9 @@
     <author email="stuvo@ehb.be" href="http://www.erasmushogeschool.be/begeleiding/studentenvoorzieningen-stuvo-ehb">
         Stuvo Erasmus Hogeschool Brussel
     </author>
+    <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+    <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
+    <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <content src="index.html" />
     <access origin="*" />
     <!-- for Android (you will find one in res/xml) -->
@@ -24,13 +27,6 @@
     <feature name="Calendar">
         <param name="android-package" value="nl.xservices.plugins.Calendar" />
     </feature>
-    <feature name="WebViewDebug">
-        <param name="android-package" value="com.jamiestarke.webviewdebug.WebViewDebug" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="SQLitePlugin">
-        <param name="android-package" value="org.pgsqlite.SQLitePlugin" />
-    </feature>
     <feature name="PushPlugin">
         <param name="android-package" value="com.plugin.gcm.PushPlugin" />
     </feature>
@@ -44,10 +40,8 @@
 	</feature>
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
 	<gap:plugin name="nl.x-services.plugins.calendar" version="4.2.4" />
-	<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
-	<gap:plugin name="com.millerjames01.sqlite-plugin" version="1.0.1" />
-	<gap:plugin name="com.jamiestarke.webviewdebug" version="1.0.8" />
-	<gap:plugin name="com.badrit.backgroundjs" version="0.1.0" />
+	<gap:plugin name="com.adobe.plugins.pushplugin" />
+	<gap:plugin name="org.apache.cordova.splashscreen" />
 	<platform name="android">
               <icon src="res/android/ldpi.png" density="ldpi" />
               <icon src="res/android/mdpi.png" density="mdpi" />
@@ -87,4 +81,17 @@
               <!-- tile image -->
               <icon src="res/wp/Background.png" width="159" height="159" />
      </platform>
+     
+    <!-- Define app splash screen for each platform. -->
+    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
+    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
+    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
+    <gap:splash src="res/screen/blackberry/screen-225.png"              gap:platform="blackberry" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
+    <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
+    <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
 </widget>

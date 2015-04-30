@@ -1,0 +1,22 @@
+<ons-page ng-controller="ContactDetailController">
+	<ons-toolbar>
+		<div class="left">
+			<ons-back-button>Terug</ons-back-button>
+		</div>
+		<div class="center">Stuvo Contacten</div>
+	</ons-toolbar>
+
+	<ons-list-item modifier="chevron" class="item" ng-repeat="item in lists">
+		<ons-row>
+			<ons-col style="margin: 10px;" width="90%">
+				<ons-list-item>
+					<p><b>Naam:</b> {{item.voornaam}} {{item.achternaam}}</p>
+
+					<p><b>Telefoonnummer:</b> {{item.telefoonnummer}}</p>
+
+					<p><b>Omschrijving:</b> {{item.omschrijving}}</p>
+				</ons-list-item>
+			</ons-col>
+		</ons-row>
+	</ons-list-item>
+</ons-page>

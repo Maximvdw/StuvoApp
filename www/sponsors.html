@@ -8,8 +8,8 @@
 		</div>
 		<div class="center">Sponsor lijst</div>
 	</ons-toolbar>
-	<div id="sponsor">
-		<table data-ng-init="fetchSponsor()" modifier="chevron" class="item" ng-repeat="item in items" style="width: 100%;">
+	<div data-ng-init="fetchSponsor()" id="sponsor">
+		<table modifier="chevron" class="item" ng-repeat="item in items" style="width: 100%;">
 			<tr>
 				<td>
 					<a href="{{item.link}}"><img src="{{item.image}}" /></a>
@@ -21,8 +21,8 @@
 			<tr>
 				<td id="titel">{{item.beschrijving}}</td>
 			</tr>
-			<br/>
 		</table>
+		<br>
 		<!--		<ons-list data-ng-init="fetchSponsor()">
 			<ons-list-item modifier="chevron" class="item" ng-repeat="item in items">
 				<ons-row>

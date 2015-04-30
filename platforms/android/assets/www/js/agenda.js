@@ -12,6 +12,9 @@ module.controller('EventDetailController', function($scope, $data) {
 			$scope.item.startday, $scope.item.starthour, $scope.item.startminute, $scope.item.endyear, $scope.item.endmonth,
 			$scope.item.endday, $scope.item.endhour, $scope.item.endminute);
 	}
+	$scope.map = function() {
+		window.location = 'http://maps.google.com/maps?q=' + $scope.item.location;
+	}
 });
 
 module.factory('$data', function() {
@@ -19,6 +22,7 @@ module.factory('$data', function() {
 });
 
 module.controller('EventMasterController', function($scope, $http, $data) {
+	$scope.maanden = JSON.parse(window.localStorage.getItem('events'));
 	$scope.fetchNews = function() {
 		$http({
 			method: 'GET',
@@ -47,7 +51,8 @@ module.controller('EventMasterController', function($scope, $http, $data) {
 						endmonth: event['date']['endmonth'],
 						endday: event['date']['endday'],
 						endhour: event['date']['endhour'],
-						endminute: event['date']['endminute']
+						endminute: event['date']['endminute'],
+						location: event['location']
 					});
 				});
 				maandData.maanden.push({
@@ -56,6 +61,10 @@ module.controller('EventMasterController', function($scope, $http, $data) {
 				});
 			});
 			$scope.maanden = maandData.maanden;
+			if ($scope.items != null) {
+				window.localStorage.setItem('events', JSON.stringify($scope.maanden));
+
+			}
 			document.getElementById('agenda-loading').className = "hidden";
 		}).
 		error(function(data, status) {
@@ -92,7 +101,8 @@ module.controller('EventMasterController', function($scope, $http, $data) {
 						endmonth: event['date']['endmonth'],
 						endday: event['date']['endday'],
 						endhour: event['date']['endhour'],
-						endminute: event['date']['endminute']
+						endminute: event['date']['endminute'],
+						location: event['location']
 					});
 				});
 				maandData.maanden.push({

@@ -12,7 +12,7 @@
 
 	<ons-list-item modifier="tappable">
 		<label class="radio-button radio-button--list-item">
-			<input id="rad_campus_1" type="radio" name="campus" value="1" onchange='handleCampus(this);'>
+			<input id="rad_campus_1" type="radio" name="campus" value="0" onchange='handleCampus(this);'>
 			<div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
 			Campus Nijverheidskaai
 		</label>
@@ -20,7 +20,7 @@
 
 	<ons-list-item modifier="tappable">
 		<label class="radio-button radio-button--list-item">
-			<input id="rad_campus_2" type="radio" name="campus" value="2" onchange='handleCampus(this);'>
+			<input id="rad_campus_2" type="radio" name="campus" value="1" onchange='handleCampus(this);'>
 			<div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
 			Campus Dansaert
 		</label>
@@ -28,7 +28,7 @@
 
 	<ons-list-item modifier="tappable">
 		<label class="radio-button radio-button--list-item">
-			<input id="rad_campus_3" type="radio" name="campus" value="3" checked="checked" onchange='handleCampus(this);'>
+			<input id="rad_campus_3" type="radio" name="campus" value="2" checked="checked" onchange='handleCampus(this);'>
 			<div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
 			Campus Jette
 		</label>
@@ -51,4 +51,41 @@
 			Notificatie bij nieuws
 		</label>
 	</ons-list-item>
+	<br>
+	<ons-row>
+		<ons-col style="margin-left: auto; margin-right: auto;" width="90%">
+			<button ng-click="registerDrankje();" id="registerDrankje" class="button button--large--cta">
+				<ons-icon icon="ion-beer" size="28px" fixed-width="false"></ons-icon> Verkrijg uw gratis drankje!
+				<ons-icon icon="ion-beer" size="28px" fixed-width="false"></ons-icon>
+			</button>
+		</ons-col>
+	</ons-row>
+	<div class="alert-dialog-mask hidden" id="dialogRegisterMask"></div>
+
+	<div class="alert-dialog hidden" id="dialogRegister">
+		<div class="alert-dialog-title">Voer uw studenten email in</div>
+
+		<div class="alert-dialog-content">
+			<input type="text" class="text-input" id="registrationEmail" placeholder="Studenten email" value="">
+			<br>
+		</div>
+
+		<div class="alert-dialog-footer">
+			<button ng-click="confirmRegisterDrankje();" class="alert-dialog-button
+      alert-dialog-button--primal">
+				<ons-icon icon="ion-load-c" spin="true" ng-show="isSending"></ons-icon> OK</button>
+		</div>
+	</div>
+	<div class="alert-dialog hidden" id="dialogRegisterFinished">
+		<div class="alert-dialog-title">{{dialogFinished.title}}</div>
+
+		<div class="alert-dialog-content">
+			{{dialogFinished.content}}
+		</div>
+
+		<div class="alert-dialog-footer">
+			<button ng-click="dialogFinishedDone();" class="alert-dialog-button
+      alert-dialog-button--primal">OK</button>
+		</div>
+	</div>
 </ons-page>

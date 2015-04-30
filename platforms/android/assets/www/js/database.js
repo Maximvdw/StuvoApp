@@ -1,74 +1,87 @@
-// Wait for Cordova to load
-document.addEventListener("deviceready", onDeviceReady, false);
-var db = null;
-
-var settings = {
-	notifications_news: false,
-	notifications_events: false
-};
-
-// Cordova is ready
-function onDeviceReady() {
-	var db = window.sqlitePlugin.openDatabase({
-		name: "my.db"
-	});
-
-	db.transaction(function(tx) {
-		tx.executeSql('CREATE TABLE IF NOT EXISTS settings (key text primary key, value text)');
-
-		// demonstrate PRAGMA:
-		db.executeSql("pragma table_info (settings);", [], function(res) {
-			console.log("PRAGMA res: " + JSON.stringify(res));
-		});
-
-		tx.executeSql("INSERT INTO settings (key, value) VALUES (?,?)", ["notification_news", "0"], function(tx, res) {
-			console.log("insertId: " + res.insertId + " -- probably 1");
-			console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
-		}, function(e) {
-			console.log("ERROR: " + e.message);
-		});
-		tx.executeSql("INSERT INTO settings (key, value) VALUES (?,?)", ["notification_events", "0"], function(tx, res) {
-			console.log("insertId: " + res.insertId + " -- probably 1");
-			console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
-		}, function(e) {
-			console.log("ERROR: " + e.message);
-		});
-
-		tx.executeSql("select value from settings where key = 'notification_news';", [], function(tx, res) {
-			console.log("res.rows.length: " + res.rows.length + " -- should be 1");
-			console.log("res.rows.item(0).value: " + res.rows.item(0).value);
-			if (res.rows.item(0).value == "1")
-				settings.notifications_news = true;
-			else
-				settings.notifications_news = false;
-		});
-		tx.executeSql("select value from settings where key = 'notification_events';", [], function(tx, res) {
-			console.log("res.rows.length: " + res.rows.length + " -- should be 1");
-			console.log("res.rows.item(0).value: " + res.rows.item(0).value);
-			if (res.rows.item(0).value == "1")
-				settings.notifications_events = true;
-			else
-				settings.notifications_events = false;
-		});
-
-		setSetting("notification_news", "1");
-	});
-}
+var permanentStorage = window.localStorage;
 
 function setSetting(setting, value) {
-	db.transaction(function(tx) {
-		console.log("Saving setting: " + setting + " = " + value);
-		tx.executeSql("UPDATE TABLE settings SET value = ? WHERE key = ?", [value, setting], function(tx, res) {
-			console.log("insertId: " + res.insertId + " -- probably 1");
-			console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
-		}, function(e) {
-			console.log("ERROR UPDATE: " + e.message);
-		});
-	});
+	window.localStorage.setItem(setting, value);
 }
 
-function resetSettings() {
-	db.transaction(function(tx) {
-		tx.executeSql('DROP TABLE IF EXISTS settings');
-	});
+function getSetting(setting) {
+	return window.localStorage.getItem(setting);
 }
+
+function notificationEventChange(cb) {
+	if (cb.checked === true) {
+		setSetting('notification_event', true);
+	} else {
+		setSetting('notification_event', false);
+	}
+}
+
+function notificationNewsChange(cb) {
+	if (cb.checked === true) {
+		setSetting('notification_news', true);
+	} else {
+		setSetting('notification_news', false);
+	}
+}
+
+function handleCampus(cb) {
+	if (cb.checked === true) {
+		setSetting('campus', cb.value);
+	}
+}
+
+module.controller('SettingsController', function($scope, $http) {
+	document.getElementById("chk_notification_news").checked = getSetting('notification_news') === "true" ? true : false;
+	document.getElementById("chk_notification_event").checked = getSetting('notification_event') === "true" ? true : false;
+	if (getSetting('registered') === "true") {
+		$('#registerDrankje').addClass('hidden');
+	}
+	if (getSetting('campus') != null)
+		document.getElementById("rad_campus_" + getSetting('campus')).checked = true;
+
+	$scope.registerDrankje = function() {
+		$('#dialogRegister').removeClass('hidden');
+		$('#dialogRegisterMask').removeClass('hidden');
+	}
+
+	$scope.confirmRegisterDrankje = function() {
+		$scope.isSending = true;
+		$scope.dialogFinished = {
+			title: "",
+			content: ""
+		};
+		var email = $('#registrationEmail').val();
+		$http({
+			method: 'GET',
+			url: 'http://srv6.mvdw-software.com/workspace/StuvoBackend/public_html/api/drankregistratie.php?email=' + email
+		}).
+		success(function(data, status) {
+			$scope.isSending = false;
+			if (data['status'] == '1') {
+				$scope.dialogFinished.title = "Foutmelding!";
+				$scope.dialogFinished.content = "Gelieve een EhB email in te geven!";
+			} else if (data['status'] == '2') {
+				$scope.dialogFinished.title = "Foutmelding!";
+				$scope.dialogFinished.content = "Oeps! Het lijkt erop dat je al een gratis drankje hebt aangevraagd.";
+			} else {
+				$scope.dialogFinished.title = "Proficiat met je drankje!";
+				$scope.dialogFinished.content = "Er is een email verstuurd met je unieke code.";
+				$('#registerDrankje').addClass('hidden');
+				setSetting('registered', true);
+			}
+			$('#dialogRegister').addClass('hidden');
+			$('#dialogRegisterFinished').removeClass('hidden');
+		}).
+		error(function(data, status) {
+			$('#dialogRegister').addClass('hidden');
+		}).
+		finally(function() {
+
+		});
+	}
+
+	$scope.dialogFinishedDone = function() {
+		$('#dialogRegisterFinished').addClass('hidden');
+		$('#dialogRegisterMask').addClass('hidden');
+	}
+});

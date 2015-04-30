@@ -2,7 +2,7 @@ module.controller('SponsorsController', function($scope, $http) {
 	$scope.fetchSponsor = function() {
 		$http({
 			method: 'GET',
-			url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/sponsor.php'
+			url: 'http://srv6.mvdw-software.com/workspace/StuvoBackend/public_html/api/sponsor.php'
 		})
 			.success(function(data, status) {
 				var sponsItems = {
@@ -25,7 +25,7 @@ module.controller('SponsorsController', function($scope, $http) {
 		});
 	}
 
-
 	$scope.fetchSponsor();
+
 
 });

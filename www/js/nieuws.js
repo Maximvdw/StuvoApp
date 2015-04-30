@@ -11,11 +11,9 @@
   	$scope.share = function() {
   		window.plugins.socialsharing.share('Stuvo Nieuws: ', null, null, $scope.item.link);
   	}
-  	/* Dit is om bij nieuwsDetail.html ervoor te zorgen dat indien <=200 er tekst onder de foto komt en anders rond de foto
-    var keuze = $scope.item.desc;
-    if (keuze<=200 characters ) <img src="{{item.picture}}">
-    else <img src="{{item.picture}}" align="left" style="margin: 0px 5px 0px 0px">
-    */
+  	var keuze = $scope.item.desc.length;
+  	//Pas de voorwaarde aan indien men wil dat de desc meer chars moet bevatten eer tekst rond img komt
+  	if (keuze >= 250) document.getElementById("imgNieuwsDet").align = "left";
   });
 
   module.factory('$data', function() {
@@ -26,47 +24,13 @@
   	$scope.limit = 25;
   	$scope.maxLimit = 250;
   	$scope.itemScopes = [];
-  	$scope.NewsDelegate = {
-  		calculateItemHeight: function(index) {
-  			return 75;
-  		},
-  		countItems: function() {
-  			return $scope.maxLimit;
-  		},
-  		destroyItemScope: function(index, scope) {
+  	$scope.items = JSON.parse(window.localStorage.getItem('news'));
 
-  		},
-  		configureItemScope: function(index, itemScope) {
-  			if (!itemScope.item) {
-  				itemScope.item = {
-  					title: '',
-  					label: '',
-  					desc: '',
-  					descshort: '',
-  					picture: '',
-  					link: '',
-  					loading: 1
-  				};
-
-  				$scope.itemScopes[index] = itemScope;
-  				try {
-  					if ($scope.items[index] != undefined) {
-  						itemScope.item = $scope.items[index];
-  					}
-  				} catch (ex) {
-
-  				}
-  				if (index > $scope.limit) {
-  					$scope.fetchNewNews();
-  				}
-  			}
-  		}
-  	};
   	$scope.fetchNews = function() {
   		$scope.isLoading = true;
   		$http({
   			method: 'GET',
-  			url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/nieuws.php?limit=' + $scope.limit
+  			url: 'http://srv6.mvdw-software.com/workspace/StuvoBackend/public_html/api/nieuws.php?limit=' + $scope.limit
   		}).
   		success(function(data, status) {
   			var newsData = {
@@ -85,6 +49,7 @@
   				});
   			});
   			$scope.items = newsData.items;
+  			window.localStorage.setItem('news', JSON.stringify($scope.items));
   			for (var i = 0; i < $scope.itemScopes.length; i++) {
   				$scope.itemScopes[i].item = $scope.items[i];
   			}
@@ -99,7 +64,7 @@
   	$scope.refreshNews = function($done) {
   		$http({
   			method: 'GET',
-  			url: 'http://srv5.mvdw-software.com/workspace/StuvoBackend/html/nieuws.php?limit=' + $scope.limit
+  			url: 'http://srv6.mvdw-software.com/workspace/StuvoBackend/public_html/api/nieuws.php?limit=' + $scope.limit
   		}).
   		success(function(data, status) {
   			$scope.isLoading = true;
@@ -122,6 +87,7 @@
   				$scope.maxLimit = data['data'].length;
   			}
   			$scope.items = newsData.items;
+  			window.localStorage.setItem('news', JSON.stringify($scope.items));
   			for (var i = 0; i < $scope.itemScopes.length; i++) {
   				$scope.itemScopes[i].item = $scope.items[i];
   			}

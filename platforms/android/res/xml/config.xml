@@ -23,6 +23,10 @@
     <feature name="LocalNotification">
         <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
     </feature>
+    <feature name="BackgroundMode">
+        <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode" />
+    </feature>
+    <preference name="KeepRunning" value="true" />
     <icon density="ldpi" src="res/android/ldpi.png" />
     <icon density="mdpi" src="res/android/mdpi.png" />
     <icon density="hdpi" src="res/android/hdpi.png" />

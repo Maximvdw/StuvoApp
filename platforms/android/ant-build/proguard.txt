@@ -10,6 +10,9 @@
 # view AndroidManifest.xml #generated:13
 -keep class com.plugin.gcm.PushHandlerActivity { <init>(...); }
 
+# view AndroidManifest.xml #generated:33
+-keep class de.appplant.cordova.plugin.background.ForegroundService { <init>(...); }
+
 # view AndroidManifest.xml #generated:23
 -keep class de.appplant.cordova.plugin.localnotification.ClearReceiver { <init>(...); }
 
